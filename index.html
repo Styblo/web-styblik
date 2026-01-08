@@ -3,15 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bc. Tomáš Styblík | Smart Home & Projeky</title>
+    <meta name="description" content="Bc. Tomáš Styblík - Projekty a realizace chytrých domácností Loxone, zabezpečení a vytápění.">
+    <title>Bc. Tomáš Styblík | Smart Home & Projekce</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; }
-        h1 { color: #333; }
+        /* === ZÁKLADNÍ STYL === */
+        :root {
+            --primary: #004e92; /* Technická modrá */
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --text-gray: #555;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        /* === HLAVIČKA === */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--dark); }
+
+        /* === HERO SEKCE (Úvod) === */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558002038-1091a1661116?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background: #003366; }
+
+        /* === SLUŽBY (Grid) === */
+        .container {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .service-card:hover { transform: translateY(-5px); }
+
+        .service-card h3 { color: var(--primary); margin-top: 0; }
+
+        /* === O MNĚ === */
+        .about {
+            background-color: var(--light);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text { flex: 1; min-width: 300px; }
+        .about-image { flex: 1; min-width: 300px; text-align: center; }
+        
+        /* Placeholder pro fotku - nahraďte pak svou */
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            background-color: #ddd; 
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        /* === KONTAKT === */
+        .contact-box {
+            text-align: center;
+            background: var(--white);
+            border: 1px solid #ddd;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobilní úprava */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
-    <h1>Bc. Tomáš Styblík</h1>
-    <p>Smart Home (Loxone) • Zabezpečení • Projekty</p>
-    <p><em>Web je ve výstavbě.</em></p>
+
+    <header>
+        <a href="#" class="logo">Bc. <span>Styblík</span></a>
+        </header>
+
+    <section class="hero">
+        <h1>Chytrá domácnost s odborným přístupem</h1>
+        <p>Návrhy a realizace inteligentních domů Loxone, kamerových systémů a podlahového vytápění. Propojuji moderní technologie do jednoho funkčního celku.</p>
+        <a href="#kontakt" class="btn">Chci nezávaznou konzultaci</a>
+    </section>
+
+    <section class="container">
+        <div class="section-title">
+            <h2>Co nabízím</h2>
+            <p>Nejsem jen montér. Nabízím komplexní řešení od projektu po oživení.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Chytrý dům (Loxone)</h3>
+                <p>Kompletní instalace a programování systému Loxone. Ovládejte světla, žaluzie i hudbu z jedné aplikace nebo spínejte velké zátěže (ohřev TUV,...) v čas, kdy je energie levnější. Váš dům bude myslet za vás.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Zabezpečení & Kamery</h3>
+                <p>Mějte svůj dům pod dohledem. Instaluji kamerové systémy a zabezpečení</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Projekty vytápění</h3>
+                <p>Návrhy a výpočty podlahového vytápění. Zajistím, aby systém topili efektivně a úsporně. Spolupráce s ověřenými topenáři.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container about">
+        <div class="about-image">
+            <div class="profile-pic">Zde bude vaše fotka</div>
+        </div>
+        <div class="about-text">
+            <h2>O mně</h2>
+            <p><strong>Bc. Tomáš Styblík</strong></p>
+            <p>Jsem specialista v oboru elektrotechniky se zaměřením na automatizaci. Mou vizí není jen "natahat kabely", ale navrhnout systém, který dává smysl jako celek.</p>
+            <p>V praxi se setkávám s tím, že jednotlivé technologie v domech spolu nekomunikují. Mým cílem je to změnit. Díky technickému vzdělání a praxi vám zaručím, že návrh na papíře bude fungovat i ve skutečnosti.</p>
+            <p>✅ Autorizovaný projektant<br>✅ Certifikovaný partner Loxone</p>
+        </div>
+    </section>
+
+    <section class="container" id="kontakt">
+        <div class="section-title">
+            <h2>Kontakt</h2>
+        </div>
+        <div class="contact-box">
+            <p>Plánujete stavbu nebo rekonstrukci? Ozvěte se mi, probereme možnosti.</p>
+            
+            <div class="contact-info">
+                📧 <a href="mailto:styblik.tomas@outlook.com" style="color:var(--primary)">styblik.tomas@outlook.com</a><br>
+                📞 +420 608 31 44 49
+            </div>
+            
+            <p style="color: #666; font-size: 0.9rem;">
+                Působím v lokalitě: Kladno, Praha a Střední Čechy<br>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena.</p>
+    </footer>
+
 </body>
 </html>
