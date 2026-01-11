@@ -2,71 +2,82 @@
 <html lang="cs">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>RD Kladno - Detail projektu | Bc. Styblík</title>
- <link rel="stylesheet" href="style.css">
- <link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RD Kladno - Detail projektu | Bc. Styblík</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
- <header>
-  <a href="index.html" class="logo">
-   <div class="logo-icon small">TS</div>
-   <span class="logo-text">Styblík</span>
-  </a>
-  <nav>
-   <a href="index.html">Úvodní stránka</a>
-   <a href="reference.html">Reference</a>
-   <a href="index.html#kontakt">Kontakt</a>
-  </nav>
- </header>
+  <header>
+    <a href="#" class="logo">
+      <div class="logo-icon">TS</div>
+      <span class="logo-text">Chytré domy</span>
+    </a>
 
- <section class="container">
-  <a href="reference.html" style="text-decoration: none; color: #666;">← Zpět na seznam projektů</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <div class="section-title" style="margin-top: 20px;">
-   <h2>Rodinný dům - příklad</h2>
-   <p>Rok realizace: 2025 | Systém: Loxone</p>
-  </div>
+    <nav>
+      <a href="index.html">Úvodní stránka</a>
+      <a href="reference.html">Reference</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+  </header>
 
-  <div style="max-width: 800px; margin: 0 auto 50px auto; background: var(--light); padding: 30px; border-radius: 8px;">
-   <h3>O projektu</h3>
-   <p>V tomto domě jsem realizoval kompletní elektroinstalaci od hrubých rozvodů až po osazení racku a programování.</p>
-   <ul style="margin-top: 20px;">
-    <li><strong>Osvětlení:</strong> Řízení DALI (stmívání, scény)</li>
-    <li><strong>Stínění:</strong> Automatické žaluzie podle polohy slunce</li>
-    <li><strong>Topení:</strong> Zónová regulace v každé místnosti</li>
-    <li><strong>Bezpečnost:</strong> Záplavové senzory a alarm</li>
-   </ul>
-  </div>
+	<section class="container">
+		<a href="reference.html" style="text-decoration: none; color: #666;">← Zpět na seznam projektů</a>
 
-  <h3>Fotogalerie</h3>
-  <div class="gallery-grid">
+		<div class="section-title" style="margin-top: 20px;">
+			<h2>Rodinný dům - příklad</h2>
+			<p>Rok realizace: 2025 | Systém: Loxone</p>
+		</div>
 
-   <div class="gallery-item">
-    <img src="https://images.unsplash.com/photo-1558002038-1091a1661116?auto=format&fit=crop&w=600&q=80" alt="Rozvaděč">
-    <div class="gallery-caption">Hlavní rozvaděč s Miniserverem</div>
-   </div>
+		<div
+			style="max-width: 800px; margin: 0 auto 50px auto; background: var(--light); padding: 30px; border-radius: 8px;">
+			<h3>O projektu</h3>
+			<p>V tomto domě jsem realizoval kompletní elektroinstalaci od hrubých rozvodů až po osazení racku a programování.
+			</p>
+			<ul style="margin-top: 20px;">
+				<li><strong>Osvětlení:</strong> Řízení DALI (stmívání, scény)</li>
+				<li><strong>Stínění:</strong> Automatické žaluzie podle polohy slunce</li>
+				<li><strong>Topení:</strong> Zónová regulace v každé místnosti</li>
+				<li><strong>Bezpečnost:</strong> Záplavové senzory a alarm</li>
+			</ul>
+		</div>
 
-   <div class="gallery-item">
-    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Aplikace">
-    <div class="gallery-caption">Vizualizace v iPadu</div>
-   </div>
+		<h3>Fotogalerie</h3>
+		<div class="gallery-grid">
 
-   <div class="gallery-item">
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
-     alt="Detail">
-    <div class="gallery-caption">Detail kabeláže</div>
-   </div>
+			<div class="gallery-item">
+				<img src="https://images.unsplash.com/photo-1558002038-1091a1661116?auto=format&fit=crop&w=600&q=80"
+					alt="Rozvaděč">
+				<div class="gallery-caption">Hlavní rozvaděč s Miniserverem</div>
+			</div>
 
-  </div>
- </section>
+			<div class="gallery-item">
+				<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+					alt="Aplikace">
+				<div class="gallery-caption">Vizualizace v iPadu</div>
+			</div>
 
- <footer>
-  <p>&copy; 2026 Bc. Tomáš Styblík.</p>
- </footer>
+			<div class="gallery-item">
+				<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+					alt="Detail">
+				<div class="gallery-caption">Detail kabeláže</div>
+			</div>
+
+		</div>
+	</section>
+
+	<footer>
+		<p>&copy; 2026 Bc. Tomáš Styblík.</p>
+	</footer>
 
 </body>
 

@@ -1,97 +1,112 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bc. Tomáš Styblík - Projekty a realizace chytrých domácností Loxone, Kladno a okolí, Praha.">
-    <title>Chytrá domácnost Kladno a okolí | Bc. Styblík</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Bc. Tomáš Styblík - Projekty a realizace chytrých domácností Loxone, Kladno a okolí, Praha.">
+  <title>Chytrá domácnost Kladno a okolí | Bc. Styblík</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="script" href="script.js">
+
 <body>
 
-    <header>
-        <a href="#" class="logo">
-            <div class="logo-icon">TS</div>
-            <span class="logo-text">Chytré domy</span>
-        </a>
-        <nav>
-            <a href="index.html">Úvodní stránka</a>
-            
-            <a href="reference.html">Reference</a>
-            
-            <a href="index.html#kontakt">Kontakt</a>
-        </nav>
-    </header>
+  <header>
+    <a href="#" class="logo">
+      <div class="logo-icon">TS</div>
+      <span class="logo-text">Chytré domy</span>
+    </a>
 
-    <section class="hero">
-        <h1>Chytrá domácnost Kladno a okolí</h1>
-        <p>Návrhy a realizace inteligentních domů Loxone a kamerových systémů. Propojuji moderní technologie do jednoho funkčního celku.</p>
-        <a href="#kontakt" class="btn">Chci nezávaznou konzultaci</a>
-    </section>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-    <section class="container">
-        <div class="section-title">
-            <h2>Komplexní řešení od projektu po oživení</h2>
-        </div>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Chytrý dům (Loxone)</h3>
-                <p>Kompletní instalace a programování systému Loxone. Ovládejte světla, žaluzie i hudbu z jedné aplikace nebo pomocí klasických tlačítek. Systém se postará i o automatické zavlažování nebo spínání spotřebičů v době levné energie.</p>
-            </div>
-            
-            <div class="service-card">
-                <h3>Zabezpečení & Kamery</h3>
-                <p>Mějte svůj dům pod dohledem.</p>
-            </div>
+    <nav>
+      <a href="index.html">Úvodní stránka</a>
+      <a href="reference.html">Reference</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+  </header>
 
-            <div class="service-card">
-                <h3>3D tisk</h3>
-                <p>Zakázkový 3D tisk technických dílů. Výroba krabiček pro elektroniku, držáků senzorů a atypických prvků pro instalace na míru.</p>
-            </div>
-        </div>
-    </section>
+  <section class="hero">
+    <h1>Chytrá domácnost Kladno a okolí</h1>
+    <p>Návrhy a realizace inteligentních domů Loxone a kamerových systémů. Propojuji moderní technologie do jednoho
+      funkčního celku.</p>
+    <a href="#kontakt" class="btn">Chci nezávaznou konzultaci</a>
+  </section>
 
-    <section class="container about">
-        <div class="about-image">
-            <div class="profile-pic">Zde bude foto</div>
-        </div>
-        <div class="about-text">
-            <h2>O mně</h2>
-            <p><strong>Bc. Tomáš Styblík</strong></p>
-            <p>Jsem absolventem oboru <strong>Kybernetika a robotika na ČVUT</strong> a aktuálně dokončuji navazující inženýrské studium v oboru <strong>Inteligentní budovy</strong>.</p>
-            <p style="margin-top: 20px; font-weight: bold; color: var(--primary);">
-                Vzdělání:<br>
-                 - Kybernetika a robotika (Bc.)<br>
-                 - Inteligentní budovy (Ing. - dokončuji)<br><br>
-                Certifikáty:<br>
-                 - Certifikovaný partner Loxone
-            </p>
-        </div>
-    </section>
+  <section class="container">
+    <div class="section-title">
+      <h2>Komplexní řešení od projektu po oživení</h2>
+    </div>
 
-    <section class="container" id="kontakt">
-        <div class="section-title">
-            <h2>Kontakt</h2>
-        </div>
-        <div class="contact-box">
-            <p>Plánujete stavbu nebo rekonstrukci? Ozvěte se mi, probereme možnosti.</p>
-            
-            <div class="contact-info">
-                📧 <a href="mailto:zatímnic@outlook.com" style="color:var(--primary); text-decoration: none; font-weight: bold;">zatímnefunkcni@outlook.com</a><br>
-                📞 +420 123 456 789
-            </div>
-            
-            <p style="color: #666; font-size: 0.9rem;">
-                Působím v lokalitě: Kladno, Praha a Střední Čechy<br>
-            </p>
-        </div>
-    </section>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Chytrý dům (Loxone)</h3>
+        <p>Kompletní instalace a programování systému Loxone. Ovládejte světla, žaluzie i hudbu z jedné aplikace nebo
+          pomocí klasických tlačítek. Systém se postará i o automatické zavlažování nebo spínání spotřebičů v době levné
+          energie.</p>
+      </div>
 
-    <footer>
-        <p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena.</p>
-    </footer>
+      <div class="service-card">
+        <h3>Zabezpečení & Kamery</h3>
+        <p>Mějte svůj dům pod dohledem.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>3D tisk</h3>
+        <p>Zakázkový 3D tisk technických dílů. Výroba krabiček pro elektroniku, držáků senzorů a atypických prvků pro
+          instalace na míru.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container about">
+    <div class="about-image">
+      <div class="profile-pic">Zde bude foto</div>
+    </div>
+    <div class="about-text">
+      <h2>O mně</h2>
+      <p><strong>Bc. Tomáš Styblík</strong></p>
+      <p>Jsem absolventem oboru <strong>Kybernetika a robotika na ČVUT</strong> a aktuálně dokončuji navazující
+        inženýrské studium v oboru <strong>Inteligentní budovy</strong>.</p>
+      <p style="margin-top: 20px; font-weight: bold; color: var(--primary);">
+        Vzdělání:<br>
+        - Kybernetika a robotika (Bc.)<br>
+        - Inteligentní budovy (Ing. - dokončuji)<br><br>
+        Certifikáty:<br>
+        - Certifikovaný partner Loxone
+      </p>
+    </div>
+  </section>
+
+  <section class="container" id="kontakt">
+    <div class="section-title">
+      <h2>Kontakt</h2>
+    </div>
+    <div class="contact-box">
+      <p>Plánujete stavbu nebo rekonstrukci? Ozvěte se mi, probereme možnosti.</p>
+
+      <div class="contact-info">
+        📧 <a href="mailto:zatímnic@outlook.com"
+          style="color:var(--primary); text-decoration: none; font-weight: bold;">zatímnefunkcni@outlook.com</a><br>
+        📞 +420 123 456 789
+      </div>
+
+      <p style="color: #666; font-size: 0.9rem;">
+        Působím v lokalitě: Kladno, Praha a Střední Čechy<br>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena.</p>
+  </footer>
 
 </body>
+
 </html>

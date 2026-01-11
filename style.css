@@ -3,74 +3,74 @@
    ========================================= */
 
 :root {
- /* Tady měníte barvu pro oba weby najednou */
- --primary: #1dc000;
- /* Změňte na #54b948 pro Loxone zelenou */
- --dark: #1a1a1a;
- --light: #f4f4f4;
- --white: #ffffff;
- --text-gray: #555;
+	/* Tady měníte barvu pro oba weby najednou */
+	--primary: #1dc000;
+	/* Změňte na #54b948 pro Loxone zelenou */
+	--dark: #1a1a1a;
+	--light: #f4f4f4;
+	--white: #ffffff;
+	--text-gray: #555;
 }
 
 body {
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- margin: 0;
- padding: 0;
- line-height: 1.6;
- color: var(--dark);
- background-color: var(--white);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	color: var(--dark);
+	background-color: var(--white);
 }
 
 /* Tlačítka (Společné) */
 .btn {
- display: inline-block;
- background: var(--primary);
- color: var(--white);
- padding: 12px 30px;
- text-decoration: none;
- border-radius: 4px;
- font-weight: bold;
- transition: background 0.3s;
- border: none;
- cursor: pointer;
+	display: inline-block;
+	background: var(--primary);
+	color: var(--white);
+	padding: 12px 30px;
+	text-decoration: none;
+	border-radius: 4px;
+	font-weight: bold;
+	transition: background 0.3s;
+	border: none;
+	cursor: pointer;
 }
 
 .btn:hover {
- background: #003366;
+	background: #003366;
 }
 
 /* Tmavší odstín při najetí */
 
 /* Logo TS Kostka (Společné) */
 .logo {
- justify-self: start;
- display: flex;
- align-items: center;
- text-decoration: none;
- color: var(--dark);
+	justify-self: start;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: var(--dark);
 }
 
 .logo-icon {
- background-color: var(--primary);
- color: var(--white);
- width: 40px;
- height: 40px;
- display: flex;
- align-items: center;
- justify-content: center;
- border-radius: 4px;
- font-weight: 800;
- font-size: 1.2rem;
- margin-right: 10px;
+	background-color: var(--primary);
+	color: var(--white);
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	font-weight: 800;
+	font-size: 1.2rem;
+	margin-right: 10px;
 }
 
 /* Varianta loga pro velkou kartu */
 .logo-icon.large {
- width: 60px;
- height: 60px;
- font-size: 1.8rem;
- margin-right: 0;
- margin-bottom: 20px;
+	width: 60px;
+	height: 60px;
+	font-size: 1.8rem;
+	margin-right: 0;
+	margin-bottom: 20px;
 }
 
 /* =========================================
@@ -78,169 +78,229 @@ body {
    ========================================= */
 
 header {
- background: var(--white);
- box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
- padding: 1rem 5%;
- position: sticky;
- top: 0;
- z-index: 100;
+	background: var(--white);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 1rem 5%;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 
- display: grid;
- /* Tři sloupce: 1. Logo (vlevo), 2. Menu (uprostřed), 3. Prázdno (vpravo - pro vyvážení) */
- grid-template-columns: 1fr auto 1fr;
- align-items: center;
+	display: grid;
+	/* Tři sloupce: 1. Logo (vlevo), 2. Menu (uprostřed), 3. Prázdno (vpravo - pro vyvážení) */
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
 }
 
 header nav {
- justify-self: center;
- /* Zarovnat přesně na střed mřížky */
- display: flex;
- gap: 40px;
- /* Větší mezery mezi slovy, vypadá to vzdušněji */
+	justify-self: center;
+	display: flex;
+	gap: 40px;
 }
 
 header nav a {
- text-decoration: none;
- color: var(--dark);
- /* Černá barva jako nadpis */
-
- /* ZMĚNA FONTU - Aby to vypadalo jako nadpis H2 */
- font-weight: 700;
- /* Extra tučné */
- font-size: 1.15rem;
- /* O něco větší než původně */
- letter-spacing: -0.5px;
- /* Jemně sražené k sobě (moderní styl) */
-
- position: relative;
- transition: color 0.3s;
+	text-decoration: none;
+	color: var(--dark);
+	font-weight: 700;
+	font-size: 1.15rem;
+	transition: color 0.3s;
 }
 
 header nav a:hover {
- color: var(--primary);
+	color: var(--primary);
 }
 
+/* === HAMBURGER IKONA (Na PC skrytá) === */
+.hamburger {
+	display: none;
+	cursor: pointer;
+	flex-direction: column;
+	gap: 5px;
+	justify-self: end;
+}
+
+.hamburger span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: var(--dark);
+	transition: 0.3s;
+}
+
+
 .logo-text {
- font-weight: 700;
- font-size: 1.2rem;
- text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1.2rem;
+	text-transform: uppercase;
 }
 
 .hero {
- background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1558002038-1091a1661116?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
- background-size: cover;
- background-position: center;
- color: var(--white);
- padding: 100px 5%;
- text-align: center;
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1558002038-1091a1661116?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+	background-size: cover;
+	background-position: center;
+	color: var(--white);
+	padding: 100px 5%;
+	text-align: center;
 }
 
 .hero h1 {
- font-size: 3rem;
- margin-bottom: 1rem;
+	font-size: 3rem;
+	margin-bottom: 1rem;
 }
 
 .hero p {
- font-size: 1.2rem;
- max-width: 700px;
- margin: 0 auto 2rem auto;
- color: #ddd;
+	font-size: 1.2rem;
+	max-width: 700px;
+	margin: 0 auto 2rem auto;
+	color: #ddd;
 }
 
 .container {
- padding: 80px 5%;
- max-width: 1200px;
- margin: 0 auto;
+	padding: 80px 5%;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .section-title {
- text-align: center;
- margin-bottom: 50px;
+	text-align: center;
+	margin-bottom: 50px;
 }
 
 .section-title h2 {
- font-size: 2.5rem;
- margin-bottom: 10px;
+	font-size: 2.5rem;
+	margin-bottom: 10px;
 }
 
 .services-grid {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
- gap: 30px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 30px;
 }
 
 .service-card {
- background: var(--light);
- padding: 30px;
- border-radius: 8px;
- transition: transform 0.3s;
- border-bottom: 4px solid var(--primary);
+	background: var(--light);
+	padding: 30px;
+	border-radius: 8px;
+	transition: transform 0.3s;
+	border-bottom: 4px solid var(--primary);
 }
 
 .service-card:hover {
- transform: translateY(-5px);
+	transform: translateY(-5px);
 }
 
 .service-card h3 {
- color: var(--primary);
- margin-top: 0;
+	color: var(--primary);
+	margin-top: 0;
 }
 
 .about {
- background-color: var(--light);
- display: flex;
- flex-wrap: wrap;
- align-items: center;
- gap: 50px;
+	background-color: var(--light);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 50px;
 }
 
 .about-text {
- flex: 1;
- min-width: 300px;
+	flex: 1;
+	min-width: 300px;
 }
 
 .about-image {
- flex: 1;
- min-width: 300px;
- text-align: center;
+	flex: 1;
+	min-width: 300px;
+	text-align: center;
 }
 
 .profile-pic {
- width: 300px;
- height: 300px;
- background-color: #ddd;
- border-radius: 50%;
- display: inline-flex;
- align-items: center;
- justify-content: center;
- color: #888;
+	width: 300px;
+	height: 300px;
+	background-color: #ddd;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #888;
 }
 
 .contact-box {
- text-align: center;
- background: var(--white);
- border: 1px solid #ddd;
- padding: 40px;
- border-radius: 8px;
+	text-align: center;
+	background: var(--white);
+	border: 1px solid #ddd;
+	padding: 40px;
+	border-radius: 8px;
 }
 
 .contact-info {
- font-size: 1.2rem;
- margin: 20px 0;
+	font-size: 1.2rem;
+	margin: 20px 0;
 }
 
 footer {
- background: var(--dark);
- color: #888;
- text-align: center;
- padding: 20px;
- font-size: 0.9rem;
+	background: var(--dark);
+	color: #888;
+	text-align: center;
+	padding: 20px;
+	font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
- .hero h1 {
-  font-size: 2rem;
- }
+	.hero h1 {
+		font-size: 2rem;
+	}
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		padding: 1rem 20px;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	header nav {
+		position: absolute;
+		top: 100%;
+		/* Hned pod hlavičkou */
+		left: 0;
+		width: 100%;
+		background-color: var(--white);
+		flex-direction: column;
+		/* Položky pod sebou */
+		align-items: center;
+		gap: 0;
+		border-top: 1px solid #eee;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+		/* Skrývání a animace */
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-in-out;
+	}
+
+	header nav.active {
+		max-height: 300px;
+	}
+
+	header nav a {
+		padding: 20px 0;
+		width: 100%;
+		text-align: center;
+		border-bottom: 1px solid #f4f4f4;
+	}
+
+	.hamburger.open span:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 6px);
+	}
+
+	.hamburger.open span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.open span:nth-child(3) {
+		transform: rotate(-45deg) translate(5px, -6px);
+	}
 }
 
 /* =========================================
@@ -249,44 +309,44 @@ footer {
 
 /* Tuhle třídu musíme dát do <body> u druhého webu */
 body.redirect-layout {
- background-color: var(--light);
- height: 100vh;
- /* Roztáhnout na celou výšku */
- display: flex;
- align-items: center;
- /* Svisle na střed */
- justify-content: center;
- /* Vodorovně na střed */
+	background-color: var(--light);
+	height: 100vh;
+	/* Roztáhnout na celou výšku */
+	display: flex;
+	align-items: center;
+	/* Svisle na střed */
+	justify-content: center;
+	/* Vodorovně na střed */
 }
 
 .redirect-card {
- background: var(--white);
- padding: 40px;
- border-radius: 8px;
- box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
- text-align: center;
- max-width: 400px;
- width: 90%;
- border-top: 5px solid var(--primary);
+	background: var(--white);
+	padding: 40px;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	max-width: 400px;
+	width: 90%;
+	border-top: 5px solid var(--primary);
 }
 
 /* Načítací kolečko */
 .loader {
- border: 3px solid #f3f3f3;
- border-top: 3px solid var(--primary);
- border-radius: 50%;
- width: 25px;
- height: 25px;
- animation: spin 1s linear infinite;
- margin: 20px auto 0 auto;
+	border: 3px solid #f3f3f3;
+	border-top: 3px solid var(--primary);
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	animation: spin 1s linear infinite;
+	margin: 20px auto 0 auto;
 }
 
 @keyframes spin {
- 0% {
-  transform: rotate(0deg);
- }
+	0% {
+		transform: rotate(0deg);
+	}
 
- 100% {
-  transform: rotate(360deg);
- }
+	100% {
+		transform: rotate(360deg);
+	}
 }
