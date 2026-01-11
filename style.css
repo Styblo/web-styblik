@@ -1,6 +1,11 @@
-/* === ZÁKLADNÍ STYL === */
+/* =========================================
+   UNIVERZÁLNÍ STYLY (Pro styblik.pro i ts-chytre-domy.cz)
+   ========================================= */
+
 :root {
- --primary: #18b300;
+ /* Tady měníte barvu pro oba weby najednou */
+ --primary: #004e92;
+ /* Změňte na #54b948 pro Loxone zelenou */
  --dark: #1a1a1a;
  --light: #f4f4f4;
  --white: #ffffff;
@@ -16,20 +21,27 @@ body {
  background-color: var(--white);
 }
 
-/* === HLAVIČKA === */
-header {
- background: var(--white);
- box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
- padding: 1rem 5%;
- position: sticky;
- top: 0;
- z-index: 100;
- display: flex;
- justify-content: space-between;
- align-items: center;
+/* Tlačítka (Společné) */
+.btn {
+ display: inline-block;
+ background: var(--primary);
+ color: var(--white);
+ padding: 12px 30px;
+ text-decoration: none;
+ border-radius: 4px;
+ font-weight: bold;
+ transition: background 0.3s;
+ border: none;
+ cursor: pointer;
 }
 
-/* LOGO TS - Monogram */
+.btn:hover {
+ background: #003366;
+}
+
+/* Tmavší odstín při najetí */
+
+/* Logo TS Kostka (Společné) */
 .logo {
  display: flex;
  align-items: center;
@@ -51,13 +63,37 @@ header {
  margin-right: 10px;
 }
 
+/* Varianta loga pro velkou kartu */
+.logo-icon.large {
+ width: 60px;
+ height: 60px;
+ font-size: 1.8rem;
+ margin-right: 0;
+ margin-bottom: 20px;
+}
+
+/* =========================================
+   STYLY PRO HLAVNÍ WEB (styblik.pro)
+   ========================================= */
+
+header {
+ background: var(--white);
+ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ padding: 1rem 5%;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
 .logo-text {
  font-weight: 700;
  font-size: 1.2rem;
  text-transform: uppercase;
 }
 
-/* === HERO SEKCE === */
 .hero {
  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1558002038-1091a1661116?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
  background-size: cover;
@@ -79,22 +115,6 @@ header {
  color: #ddd;
 }
 
-.btn {
- display: inline-block;
- background: var(--primary);
- color: var(--white);
- padding: 12px 30px;
- text-decoration: none;
- border-radius: 4px;
- font-weight: bold;
- transition: background 0.3s;
-}
-
-.btn:hover {
- background: #003366;
-}
-
-/* === SLUŽBY === */
 .container {
  padding: 80px 5%;
  max-width: 1200px;
@@ -134,7 +154,6 @@ header {
  margin-top: 0;
 }
 
-/* === O MNĚ === */
 .about {
  background-color: var(--light);
  display: flex;
@@ -165,7 +184,6 @@ header {
  color: #888;
 }
 
-/* === KONTAKT === */
 .contact-box {
  text-align: center;
  background: var(--white);
@@ -193,13 +211,40 @@ footer {
  }
 }
 
+/* =========================================
+   STYLY PRO PŘESMĚROVACÍ WEB (ts-chytre-domy.cz)
+   ========================================= */
+
+/* Tuhle třídu musíme dát do <body> u druhého webu */
+body.redirect-layout {
+ background-color: var(--light);
+ height: 100vh;
+ /* Roztáhnout na celou výšku */
+ display: flex;
+ align-items: center;
+ /* Svisle na střed */
+ justify-content: center;
+ /* Vodorovně na střed */
+}
+
+.redirect-card {
+ background: var(--white);
+ padding: 40px;
+ border-radius: 8px;
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+ text-align: center;
+ max-width: 400px;
+ width: 90%;
+ border-top: 5px solid var(--primary);
+}
+
 /* Načítací kolečko */
 .loader {
  border: 3px solid #f3f3f3;
  border-top: 3px solid var(--primary);
  border-radius: 50%;
- width: 20px;
- height: 20px;
+ width: 25px;
+ height: 25px;
  animation: spin 1s linear infinite;
  margin: 20px auto 0 auto;
 }
