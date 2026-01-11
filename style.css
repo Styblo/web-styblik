@@ -245,20 +245,66 @@ footer {
 }
 
 @media (max-width: 768px) {
- .hero h1 {
-  font-size: 2rem;
- }
- header { 
-  display: flex;
-  justify-content: space-between;
- } /* Na mobilu vrátíme Flex */
- header nav { 
-  display: none;
- } 
+	.hero h1 {
+		font-size: 2rem;
+	}
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		padding: 1rem 20px;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	header nav {
+		position: absolute;
+		top: 100%;
+		/* Hned pod hlavičkou */
+		left: 0;
+		width: 100%;
+		background-color: var(--white);
+		flex-direction: column;
+		/* Položky pod sebou */
+		align-items: center;
+		gap: 0;
+		border-top: 1px solid #eee;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+		/* Skrývání a animace */
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-in-out;
+	}
+
+	header nav.active {
+		max-height: 300px;
+	}
+
+	header nav a {
+		padding: 20px 0;
+		width: 100%;
+		text-align: center;
+		border-bottom: 1px solid #f4f4f4;
+	}
+
+	.hamburger.open span:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 6px);
+	}
+
+	.hamburger.open span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.open span:nth-child(3) {
+		transform: rotate(-45deg) translate(5px, -6px);
+	}
 }
 
 /* =========================================
-  STYLY PRO PŘESMĚROVACÍ WEB (ts-chytre-domy.cz)
+   STYLY PRO PŘESMĚROVACÍ WEB (ts-chytre-domy.cz)
    ========================================= */
 
 /* Tuhle třídu musíme dát do <body> u druhého webu */
