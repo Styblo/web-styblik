@@ -310,14 +310,21 @@ footer {
 
 /* Tuhle třídu musíme dát do <body> u druhého webu */
 body.redirect-layout {
-	background-color: var(--light);
-	height: 100vh;
-	/* Roztáhnout na celou výšku */
-	display: flex;
-	align-items: center;
-	/* Svisle na střed */
-	justify-content: center;
-	/* Vodorovně na střed */
+	position: relative;
+	/* Důležité pro absolutní pozicování potomků */
+	flex-direction: column;
+	/* Pojistka, kdyby se to chtělo skládat vedle sebe */
+}
+
+/* 2. Patičku "přibijeme" dolů */
+body.redirect-layout footer {
+	position: absolute;
+	/* Vytrhne ji z toku dokumentu */
+	bottom: 0;
+	/* Přilepí ji na dno */
+	left: 0;
+	width: 100%;
+	/* Roztáhne přes celou šířku */
 }
 
 .redirect-card {
