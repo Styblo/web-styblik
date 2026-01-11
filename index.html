@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bc. Tomáš Styblík - Projekty a realizace chytrých domácností Loxone, zabezpečení a vytápění.">
-    <title>Chytrá domácnost Kladno | Bc. Styblík</title>
-    <meta name="Návrhy a realizace chytrých domácností (Loxone). Specialista na automatizaci pro Kladno, Prahu a Střední Čechy. Bc. Tomáš Styblík.">
+    <meta name="description" content="Bc. Tomáš Styblík - Projekty a realizace chytrých domácností Loxone, Kladno a okolí, Praha.">
+    <title>Chytrá domácnost Kladno a okolí | Bc. Styblík</title>
     <style>
         /* === ZÁKLADNÍ STYL === */
         :root {
-            --primary: #004e92; /* Technická modrá */
+            --primary: #004e92;
             --dark: #1a1a1a;
             --light: #f4f4f4;
             --white: #ffffff;
@@ -38,18 +37,29 @@
             align-items: center;
         }
 
+        /* LOGO TS - Monogram */
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--dark);
         }
+        .logo-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+        .logo-text { font-weight: 700; font-size: 1.2rem; text-transform: uppercase; }
 
-        .logo span { color: var(--dark); }
-
-        /* === HERO SEKCE (Úvod) === */
+        /* === HERO SEKCE === */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558002038-1091a1661116?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
@@ -58,19 +68,8 @@
             padding: 100px 5%;
             text-align: center;
         }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-            color: #ddd;
-        }
-
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem auto; color: #ddd; }
         .btn {
             display: inline-block;
             background: var(--primary);
@@ -81,32 +80,18 @@
             font-weight: bold;
             transition: background 0.3s;
         }
-
         .btn:hover { background: #003366; }
 
-        /* === SLUŽBY (Grid) === */
-        .container {
-            padding: 80px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
+        /* === SLUŽBY === */
+        .container { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-
         .service-card {
             background: var(--light);
             padding: 30px;
@@ -114,78 +99,47 @@
             transition: transform 0.3s;
             border-bottom: 4px solid var(--primary);
         }
-
         .service-card:hover { transform: translateY(-5px); }
-
         .service-card h3 { color: var(--primary); margin-top: 0; }
 
         /* === O MNĚ === */
-        .about {
-            background-color: var(--light);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 50px;
-        }
-
+        .about { background-color: var(--light); display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
         .about-text { flex: 1; min-width: 300px; }
         .about-image { flex: 1; min-width: 300px; text-align: center; }
-        
-        /* Placeholder pro fotku - nahraďte pak svou */
         .profile-pic {
-            width: 300px;
-            height: 300px;
-            background-color: #ddd; 
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
+            width: 300px; height: 300px; background-color: #ddd; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center; color: #888;
         }
 
         /* === KONTAKT === */
         .contact-box {
-            text-align: center;
-            background: var(--white);
-            border: 1px solid #ddd;
-            padding: 40px;
-            border-radius: 8px;
+            text-align: center; background: var(--white); border: 1px solid #ddd;
+            padding: 40px; border-radius: 8px;
         }
-
-        .contact-info {
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-
-        footer {
-            background: var(--dark);
-            color: #888;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Mobilní úprava */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-        }
+        .contact-info { font-size: 1.2rem; margin: 20px 0; }
+        footer { background: var(--dark); color: #888; text-align: center; padding: 20px; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">TS<span></span></a>
+        <a href="#" class="logo">
+            <div class="logo-icon">TS</div>
+            <span class="logo-text">Styblík</span>
+        </a>
     </header>
 
     <section class="hero">
-        <h1>Chytrá domácnost Kladno</h1>
+        <h1>Chytrá domácnost Kladno a okolí</h1>
         <p>Návrhy a realizace inteligentních domů Loxone a kamerových systémů. Propojuji moderní technologie do jednoho funkčního celku.</p>
         <a href="#kontakt" class="btn">Chci nezávaznou konzultaci</a>
     </section>
 
     <section class="container">
         <div class="section-title">
-            <h2>Nabízím komplexní řešení od projektu po oživení.</h2>
+            <h2>Komplexní řešení od projektu po oživení</h2>
         </div>
         
         <div class="services-grid">
@@ -196,29 +150,30 @@
             
             <div class="service-card">
                 <h3>Zabezpečení & Kamery</h3>
-                <p>Mějte svůj dům pod dohledem. Instaluji kamerové systémy a zabezpečení</p>
+                <p>Mějte svůj dům pod dohledem.</p>
             </div>
 
             <div class="service-card">
                 <h3>3D tisk</h3>
+                <p>Zakázkový 3D tisk technických dílů. Výroba krabiček pro elektroniku, držáků senzorů a atypických prvků pro instalace na míru.</p>
             </div>
         </div>
     </section>
 
     <section class="container about">
         <div class="about-image">
-            <div class="profile-pic">fotka</div>
+            <div class="profile-pic">Zde bude foto</div>
         </div>
         <div class="about-text">
             <h2>O mně</h2>
             <p><strong>Bc. Tomáš Styblík</strong></p>
             <p>Jsem absolventem oboru <strong>Kybernetika a robotika na ČVUT</strong> a aktuálně dokončuji navazující inženýrské studium v oboru <strong>Inteligentní budovy</strong>.</p>
             <p style="margin-top: 20px; font-weight: bold; color: var(--primary);">
-                <strong>Vzdělání:</strong><br>
-                - Kybernetika a robotika (Bc.)<br>
-                - Inteligentní budovy (Ing. - dokončuji)<br>
-                <strong>Certifikáty:</strong><br>
-                - Certifikovaný partner Loxone
+                Vzdělání:<br>
+                 - Kybernetika a robotika (Bc.)<br>
+                 - Inteligentní budovy (Ing. - dokončuji)<br><br>
+                Certifikáty:<br>
+                 - Certifikovaný partner Loxone
             </p>
         </div>
     </section>
@@ -231,8 +186,8 @@
             <p>Plánujete stavbu nebo rekonstrukci? Ozvěte se mi, probereme možnosti.</p>
             
             <div class="contact-info">
-                📧 <a href="mailto:styblik.tomas@outlook.com" style="color:var(--primary)">/a><br>
-                📞 +420 
+                📧 <a href="mailto:zatímnic@outlook.com" style="color:var(--primary); text-decoration: none; font-weight: bold;">zatímnefunkcni@outlook.com</a><br>
+                📞 +420 123 456 789
             </div>
             
             <p style="color: #666; font-size: 0.9rem;">
@@ -242,7 +197,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena. Lokalita: Kladno, Střední Čechy</p>
+        <p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena.</p>
     </footer>
 
 </body>
