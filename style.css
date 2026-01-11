@@ -241,10 +241,17 @@ footer {
  .hero h1 {
   font-size: 2rem;
  }
+ header { 
+  display: flex;
+  justify-content: space-between;
+ } /* Na mobilu vrátíme Flex */
+ header nav { 
+  display: none;
+ } 
 }
 
 /* =========================================
-   STYLY PRO PŘESMĚROVACÍ WEB (ts-chytre-domy.cz)
+  STYLY PRO PŘESMĚROVACÍ WEB (ts-chytre-domy.cz)
    ========================================= */
 
 /* Tuhle třídu musíme dát do <body> u druhého webu */
