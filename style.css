@@ -43,6 +43,7 @@ body {
 
 /* Logo TS Kostka (Společné) */
 .logo {
+ justify-self: start;
  display: flex;
  align-items: center;
  text-decoration: none;
@@ -83,9 +84,40 @@ header {
  position: sticky;
  top: 0;
  z-index: 100;
- display: flex;
- justify-content: space-between;
+
+ display: grid;
+ /* Tři sloupce: 1. Logo (vlevo), 2. Menu (uprostřed), 3. Prázdno (vpravo - pro vyvážení) */
+ grid-template-columns: 1fr auto 1fr;
  align-items: center;
+}
+
+header nav {
+ justify-self: center;
+ /* Zarovnat přesně na střed mřížky */
+ display: flex;
+ gap: 40px;
+ /* Větší mezery mezi slovy, vypadá to vzdušněji */
+}
+
+header nav a {
+ text-decoration: none;
+ color: var(--dark);
+ /* Černá barva jako nadpis */
+
+ /* ZMĚNA FONTU - Aby to vypadalo jako nadpis H2 */
+ font-weight: 700;
+ /* Extra tučné */
+ font-size: 1.15rem;
+ /* O něco větší než původně */
+ letter-spacing: -0.5px;
+ /* Jemně sražené k sobě (moderní styl) */
+
+ position: relative;
+ transition: color 0.3s;
+}
+
+header nav a:hover {
+ color: var(--primary);
 }
 
 .logo-text {
