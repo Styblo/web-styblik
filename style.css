@@ -5,6 +5,7 @@
 :root {
 	/* Tady měníte barvu pro oba weby najednou */
 	--primary: #1dc000;
+	--highlight: #007dca;
 	/* Změňte na #54b948 pro Loxone zelenou */
 	--dark: #1a1a1a;
 	--light: #f4f4f4;
