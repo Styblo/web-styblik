@@ -393,11 +393,9 @@ footer {
 		/* Celkové zmenšení sekce kontakt */
 		padding: 0 10px;
 	}
-
-	@media (max-width: 900px) {
     
     /* 1. Nastavíme Grid i pro mobil - 3 sloupce stejně jako na PC */
-    header {
+  header {
         display: grid; 
         grid-template-columns: 1fr auto 1fr; /* Levý, Střed, Pravý */
         align-items: center;
