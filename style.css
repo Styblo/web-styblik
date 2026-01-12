@@ -40,11 +40,58 @@ body {
 	background: #003366;
 }
 
-/* Tmavší odstín při najetí */
+/* =========================================
+   STYLY PRO HLAVNÍ WEB (styblik.pro)
+   ========================================= */
+
+header {
+	background: var(--white);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 1rem 5%;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+
+	display: grid;
+	/* Tři sloupce: 1. Logo (vlevo), 2. Menu (uprostřed), 3. Prázdno (vpravo - pro vyvážení) */
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+}
+
+.social-icon {
+	justify-self: start;
+	display: flex;
+	align-items: center;
+	color: var(--dark);
+	transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+	color: #E1306C;
+	transform: scale(1.1);
+}
+
+header nav {
+	justify-self: center;
+	display: flex;
+	gap: 40px;
+}
+
+header nav a {
+	text-decoration: none;
+	color: var(--dark);
+	font-weight: 700;
+	font-size: 1.15rem;
+	transition: color 0.3s;
+}
+
+header nav a:hover {
+	color: var(--primary);
+}
 
 /* Logo TS Kostka (Společné) */
 .logo {
-	justify-self: start;
+	justify-self: end;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
@@ -74,49 +121,13 @@ body {
 	margin-bottom: 20px;
 }
 
-/* =========================================
-   STYLY PRO HLAVNÍ WEB (styblik.pro)
-   ========================================= */
-
-header {
-	background: var(--white);
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	padding: 1rem 5%;
-	position: sticky;
-	top: 0;
-	z-index: 100;
-
-	display: grid;
-	/* Tři sloupce: 1. Logo (vlevo), 2. Menu (uprostřed), 3. Prázdno (vpravo - pro vyvážení) */
-	grid-template-columns: 1fr auto 1fr;
-	align-items: center;
-}
-
-header nav {
-	justify-self: center;
-	display: flex;
-	gap: 40px;
-}
-
-header nav a {
-	text-decoration: none;
-	color: var(--dark);
-	font-weight: 700;
-	font-size: 1.15rem;
-	transition: color 0.3s;
-}
-
-header nav a:hover {
-	color: var(--primary);
-}
-
 /* === HAMBURGER IKONA (Na PC skrytá) === */
 .hamburger {
 	display: none;
 	cursor: pointer;
 	flex-direction: column;
 	gap: 5px;
-	justify-self: end;
+	justify-self: center;
 }
 
 .hamburger span {
@@ -245,7 +256,12 @@ footer {
 	font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
+/*==========================================
+			RESPONSIVNÍ STYLY MOBIL
+			========================================= */
+
+
+@media (max-width: 900px) {
 	.hero h1 {
 		font-size: 2rem;
 	}
