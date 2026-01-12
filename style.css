@@ -402,8 +402,13 @@ footer {
 
 	.hamburger {
 		display: flex;
+		justify-self: end;
 	}
-
+	
+ .logo {
+	justify-self: center;
+	}
+	
 	header nav {
 		position: absolute;
 		top: 100%;
