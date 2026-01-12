@@ -5,7 +5,8 @@
 :root {
 	/* Tady měníte barvu pro oba weby najednou */
 	--primary: #1dc000;
-	--highlight: #007dca;
+	--highlight: #0c8a00;
+	--education: #0050c7;
 	/* Změňte na #54b948 pro Loxone zelenou */
 	--dark: #1a1a1a;
 	--light: #f4f4f4;
@@ -37,7 +38,7 @@ body {
 }
 
 .btn:hover {
-	background: #003366;
+	background: var(--highlight);
 }
 
 /* =========================================
@@ -146,12 +147,106 @@ header nav a:hover {
 }
 
 .hero {
-	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1558002038-1091a1661116?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+	position: relative;
+	/* Důležité, aby uvnitř fungovalo absolutní pozicování */
+	height: 50vh;
+	/* Výška přes 80% obrazovky (můžete změnit na 600px) */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	/* Ořízne vše, co by lezlo ven (rozmazané okraje) */
+	color: var(--white);
+	text-align: center;
+}
+
+.hero-slideshow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	/* Nejnižší vrstva */
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background-size: cover;
 	background-position: center;
-	color: var(--white);
-	padding: 100px 5%;
-	text-align: center;
+
+	/* EFEKT ROZMAZÁNÍ */
+	filter: blur(4px);
+	transform: scale(1.1);
+	/* Zvětšíme fotku, aby nebyly vidět rozmazané okraje */
+
+	opacity: 0;
+	/* Výchozí stav je skrytý */
+	animation: fadeSlide 10s infinite;
+	/* Animace trvá 15 vteřin a jede smyčku */
+}
+
+.slide:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+	animation-delay: 5s;
+}
+
+@keyframes fadeSlide {
+	0% {
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 1;
+	}
+
+	/* Rychlý nástup (1 sekunda) */
+	30% {
+		opacity: 1;
+	}
+
+	/* Drží viditelná (do 4. sekundy) */
+	50% {
+		opacity: 1;
+	}
+
+	90% {
+		opacity: 0;
+	}
+	/* Mizí (v 5. sekundě, kdy nastupuje druhá) */
+	100% {
+		opacity: 0;
+	}
+
+	/* Zbytek času je skrytá */
+}
+
+.hero-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	/* Černá s 60% průhledností */
+	z-index: 2;
+	/* Prostřední vrstva */
+}
+
+/* 3. VRSTVA - TEXT A OBSAH */
+.hero-content {
+	position: relative;
+	z-index: 3;
+	/* Nejvyšší vrstva - musí být klikatelné! */
+	max-width: 800px;
+	padding: 20px;
 }
 
 .hero h1 {
