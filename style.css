@@ -149,7 +149,7 @@ header nav a:hover {
 .hero {
 	position: relative;
 	/* Důležité, aby uvnitř fungovalo absolutní pozicování */
-	height: 60vh;
+	height: 50vh;
 	/* Výška přes 80% obrazovky (můžete změnit na 600px) */
 	display: flex;
 	align-items: center;
@@ -372,7 +372,7 @@ footer {
 
 	.hero {
 		height: auto;
-		min-height: 60vh;
+		min-height: 50vh;
 		/* Minimálně 60% výšky, ale může růst */
 		padding: 80px 0;
 		/* Místo nahoře a dole */
@@ -380,11 +380,8 @@ footer {
 
 	/* 2. OPRAVA EMAILU (Aby nevyjížděl z obrazovky) */
 	.contact-info a {
-		/* Toto je kouzlo: dovolí prohlížeči roztrhnout dlouhé slovo (email) */
-		word-break: break-all;
-
 		/* Nebo raději zmenšíme písmo */
-		font-size: 1rem;
+		font-size: 0.8rem;
 		display: block;
 		/* Aby byl na vlastním řádku */
 		line-height: 1.5;
