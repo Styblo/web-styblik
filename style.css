@@ -220,6 +220,7 @@ header nav a:hover {
 	90% {
 		opacity: 0;
 	}
+
 	/* Mizí (v 5. sekundě, kdy nastupuje druhá) */
 	100% {
 		opacity: 0;
@@ -358,7 +359,42 @@ footer {
 
 @media (max-width: 900px) {
 	.hero h1 {
-		font-size: 2rem;
+		font-size: 1.8rem;
+		line-height: 1.2;
+	}
+
+	.hero p {
+		font-size: 1rem;
+		/* Původně 1.2rem */
+		padding: 0 15px;
+		/* Přidáme polstrování, aby text nebyl nalepený na kraji displeje */
+	}
+
+	.hero {
+		height: auto;
+		min-height: 60vh;
+		/* Minimálně 60% výšky, ale může růst */
+		padding: 80px 0;
+		/* Místo nahoře a dole */
+	}
+
+	/* 2. OPRAVA EMAILU (Aby nevyjížděl z obrazovky) */
+	.contact-info a {
+		/* Toto je kouzlo: dovolí prohlížeči roztrhnout dlouhé slovo (email) */
+		word-break: break-all;
+
+		/* Nebo raději zmenšíme písmo */
+		font-size: 1rem;
+		display: block;
+		/* Aby byl na vlastním řádku */
+		line-height: 1.5;
+	}
+
+	/* Zmenšíme i ty ikonky (telefon/obálka) v kontaktu */
+	.contact-info {
+		font-size: 1rem;
+		/* Celkové zmenšení sekce kontakt */
+		padding: 0 10px;
 	}
 
 	header {
