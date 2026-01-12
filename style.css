@@ -149,7 +149,7 @@ header nav a:hover {
 .hero {
 	position: relative;
 	/* Důležité, aby uvnitř fungovalo absolutní pozicování */
-	height: 50vh;
+	height: 60vh;
 	/* Výška přes 80% obrazovky (můžete změnit na 600px) */
 	display: flex;
 	align-items: center;
