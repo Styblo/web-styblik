@@ -423,7 +423,6 @@ body.dark-start .glow-effect {
   max-width: 800px;        /* Aby řádek nebyl moc dlouhý a dobře se četl */
   margin: 0 auto 60px auto;/* Vycentrování bloku a mezera pod ním */
   padding: 0 20px;         /* Odsazení na mobilech */
-  height: 50vh;
   align-content: center;
   /* Výchozí stav pro animaci (skryté) */
   opacity: 0;
