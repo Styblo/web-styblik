@@ -232,9 +232,10 @@ body.dark-start .glow-effect {
 /* Třída pro zmizení úvodu */
 .fade-out-up {
   opacity: 0;
-  transform: translateY(-80px) scale(0.9); /* Trochu delší odjezd a zmenšení */
+  transform: translateY(-80px) scale(0.9);
+  /* Trochu delší odjezd a zmenšení */
   pointer-events: none;
-  
+
   /* --- TOTO JE TA ZMĚNA --- */
   /* Vytrhneme prvek z toku dokumentu, aby se text mohl hned nasunout */
   position: absolute;
@@ -242,7 +243,7 @@ body.dark-start .glow-effect {
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   /* Zajistíme, aby i jako absolutní prvek zůstal vycentrovaný */
   display: flex;
   flex-direction: column;
@@ -307,7 +308,8 @@ body.dark-start .glow-effect {
 }
 
 /* Sloupce */
-.text-col, .img-col {
+.text-col,
+.img-col {
   flex: 1;
 }
 
@@ -319,12 +321,13 @@ body.dark-start .glow-effect {
 /* === DEFINICE ANIMACÍ PRO DĚTI === */
 
 /* Společný základ pro Text i Obrázek - výchozí stav je neviditelný */
-.text-col, .img-col img {
+.text-col,
+.img-col img {
   opacity: 0;
   /* Definujeme přechod: když se změní opacity nebo transform, trvá to 0.8s */
   /* Používáme cubic-bezier pro "pružnější" dojezd */
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 
@@ -334,11 +337,13 @@ body.dark-start .glow-effect {
 .text-col {
   transform: translateY(60px);
 }
+
 /* Nadpisy v kartách */
 .text-col h2 {
   font-size: 2.2rem;
   margin-bottom: 15px;
-  color: var(--primary); /* Tvá primární barva Loxone, uprav dle potřeby */
+  color: var(--primary);
+  /* Tvá primární barva Loxone, uprav dle potřeby */
 }
 
 .text-col p {
@@ -350,7 +355,8 @@ body.dark-start .glow-effect {
 /* AKTIVNÍ STAV TEXTU: Když má rodič třídu .is-visible */
 .feature-row.is-visible .text-col {
   opacity: 1;
-  transform: translateY(0); /* Dojede na místo */
+  transform: translateY(0);
+  /* Dojede na místo */
 }
 
 
@@ -361,19 +367,19 @@ body.dark-start .glow-effect {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* 1. LICHÉ řádky (1, 3...) -> Obrázek je vizuálně VPRAVO.
    Výchozí stav: posunutý ještě více doprava (+80px) */
 .feature-row:nth-child(odd) .img-col img {
-   transform: translateX(80px);
+  transform: translateX(80px);
 }
 
 /* 2. SUDÉ řádky (2, 4...) -> Obrázek je vizuálně VLEVO (díky row-reverse).
    Výchozí stav: posunutý ještě více doleva (-80px) */
 .feature-row:nth-child(even) .img-col img {
-   transform: translateX(-80px);
+  transform: translateX(-80px);
 }
 
 /* AKTIVNÍ STAV OBRÁZKU (Společný pro obě strany) */
@@ -392,45 +398,54 @@ body.dark-start .glow-effect {
   /* Zvětšíme, ale zároveň držíme X pozici na nule */
   transform: translateX(0) scale(1.03);
   /* Pro hover použijeme rychlejší transition */
-  transition: transform 0.3s ease-out; 
+  transition: transform 0.3s ease-out;
 }
 
 
 /* RESPONSIVITA (Mobil) */
 @media (max-width: 768px) {
-  .feature-row, .feature-row:nth-child(even) {
-    flex-direction: column; /* Na mobilu vždy pod sebe */
+
+  .feature-row,
+  .feature-row:nth-child(even) {
+    flex-direction: column;
+    /* Na mobilu vždy pod sebe */
     gap: 30px;
     margin-bottom: 60px;
   }
-  
+
   /* Na mobilu zrušíme boční příjezdy, vypadá to divně na úzkém displeji.
      Všechno necháme přijet zespoda. */
   .feature-row:nth-child(odd) .img-col img,
   .feature-row:nth-child(even) .img-col img {
-      transform: translateY(60px); /* Místo translateX použijeme Y */
+    transform: translateY(60px);
+    /* Místo translateX použijeme Y */
   }
 
   .feature-row.is-visible .img-col img {
-      transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
 /* === ÚVODNÍ TEXTOVÉ BLOKY === */
 
 .intro-block {
-  text-align: center;      /* Zarovnání na střed */
-  max-width: 800px;        /* Aby řádek nebyl moc dlouhý a dobře se četl */
-  margin: 0 auto 60px auto;/* Vycentrování bloku a mezera pod ním */
-  padding: 0 20px;         /* Odsazení na mobilech */
+  text-align: center;
+  /* Zarovnání na střed */
+  max-width: 800px;
+  /* Aby řádek nebyl moc dlouhý a dobře se četl */
+  margin: 0 auto 60px auto;
+  /* Vycentrování bloku a mezera pod ním */
+  padding: 0 20px;
+  /* Odsazení na mobilech */
   align-content: center;
   /* Výchozí stav pro animaci (skryté) */
   opacity: 0;
-  transform: translateY(40px); /* Přijede zespoda */
-  
+  transform: translateY(40px);
+  /* Přijede zespoda */
+
   /* Animace: stejně plynulá jako u karet */
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Stav, kdy je blok vidět (přidá JS Observer) */
@@ -443,12 +458,14 @@ body.dark-start .glow-effect {
 .intro-block h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: var(--primary); /* Nebo #d63384, pokud nemáš proměnnou */
+  color: var(--primary);
+  /* Nebo #d63384, pokud nemáš proměnnou */
 }
 
 /* Styling odstavců */
 .intro-block p {
-  font-size: 1.25rem; /* O něco větší písmo pro úvod */
+  font-size: 1.25rem;
+  /* O něco větší písmo pro úvod */
   line-height: 1.6;
   color: #333;
 }
@@ -463,8 +480,73 @@ body.dark-start .glow-effect {
   .intro-block h2 {
     font-size: 2rem;
   }
+
   .intro-block p {
     font-size: 1.1rem;
   }
 }
 
+.lighting-block {
+  text-align: center;
+  /* Zarovnání na střed */
+  max-width: 800px;
+  /* Aby řádek nebyl moc dlouhý a dobře se četl */
+  margin: 0 auto 60px auto;
+  /* Vycentrování bloku a mezera pod ním */
+  padding: 0 20px;
+  /* Odsazení na mobilech */
+  align-content: center;
+  /* Výchozí stav pro animaci (skryté) */
+  opacity: 0;
+  transform: translateY(40px);
+  /* Přijede zespoda */
+
+  /* Animace: stejně plynulá jako u karet */
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.three-columns {
+    display: flex;
+    align-items: center; /* Zarovná vše na střed vertikálně */
+    gap: 2rem; /* Mezera mezi sloupci */
+}
+
+/* 1. Text (cca 30%) */
+.three-columns .text-col {
+    flex: 1.5; 
+}
+
+/* 2. Prostřední sloupec s vypínačem (úzký, aby obrázek nebyl obří) */
+.three-columns .switch-col {
+    flex: 0.8; /* Menší šířka */
+    text-align: center;
+}
+.three-columns .switch-col img {
+    max-height: 400px; /* Omezení výšky vypínače, aby nebyl přes celou obrazovku */
+    width: auto;       /* Zachová poměr stran */
+}
+
+/* 3. Fotka místnosti (nejširší) */
+.three-columns .room-col {
+    flex: 2; /* Největší šířka */
+}
+
+/* Úprava pro MOBILY - seřadit pod sebe */
+@media (max-width: 768px) {
+    .three-columns {
+        flex-direction: column;
+    }
+    .three-columns .switch-col img {
+        max-height: 250px; /* Na mobilu trochu menší */
+    }
+}
+
+#living-room-img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Třída pro efekt stmívání při výměně (pokud bys chtěl pokročilejší animaci v JS) */
+.fade-out {
+  opacity: 0.5;
+}

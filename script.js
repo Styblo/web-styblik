@@ -22,9 +22,9 @@ function switchScene() {
 
     // 3. Zobrazení nového textu (OKAMŽITĚ, žádné čekání)
     mainContent.style.display = 'block';
-    
+
     initScrollAnimations();
-    
+
     // Kratičké zpoždění (10ms) jen proto, aby prohlížeč stihl zaregistrovat změnu display:block
     // a spustil CSS transition pro opacity
     setTimeout(() => {
@@ -61,4 +61,31 @@ const observer = new IntersectionObserver((entries, observer) => {
 function initScrollAnimations() {
   const elements = document.querySelectorAll('.scroll-trigger');
   elements.forEach(el => observer.observe(el));
+}
+
+const moodImages = [
+  "fig/living-off.jpeg",
+  "fig/living-warm.jpg",  
+  "fig/living-pink.jpg",   
+];
+
+let currentMoodIndex = 0; // Začínáme na nule (první obrázek)
+
+function SwitchMood() {
+  // Najdeme obrázek v DOMu
+  // DOPORUČENÍ: Přidej obrázku ID (viz níže), je to bezpečnější než querySelector
+  const roomImage = document.getElementById('living-room-img');
+
+  if (roomImage) {
+    // Zvýšíme index o 1
+    currentMoodIndex++;
+
+    // Pokud jsme na konci seznamu, vrátíme se na začátek (cyklení)
+    if (currentMoodIndex >= moodImages.length) {
+      currentMoodIndex = 0;
+    }
+
+    // Změníme zdroj obrázku
+    roomImage.src = moodImages[currentMoodIndex];
+  }
 }
