@@ -149,7 +149,7 @@ header nav a:hover {
 .hero {
 	position: relative;
 	/* Důležité, aby uvnitř fungovalo absolutní pozicování */
-	height: 50vh;
+	height: 60vh;
 	/* Výška přes 80% obrazovky (můžete změnit na 600px) */
 	display: flex;
 	align-items: center;
@@ -357,7 +357,7 @@ footer {
 			========================================= */
 
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 	.hero h1 {
 		font-size: 1.8rem;
 		line-height: 1.2;
@@ -393,37 +393,70 @@ footer {
 		/* Celkové zmenšení sekce kontakt */
 		padding: 0 10px;
 	}
-    
-    /* 1. Nastavíme Grid i pro mobil - 3 sloupce stejně jako na PC */
-  header {
-        display: grid; 
-        grid-template-columns: 1fr auto 1fr; /* Levý, Střed, Pravý */
-        align-items: center;
-        padding: 1rem 20px;
-        gap: 0; /* Zrušíme mezery, ať se to vejde */
-    }
 
-    /* 2. Instagram (VLEVO) - Vynutíme 1. sloupec */
-    .social-icon {
-        grid-column: 1;      /* Musí být v prvním sloupci */
-        justify-self: start; /* Zarovnat doleva */
-        display: flex;       /* Ujistíme se, že je vidět */
-    }
+	/* 1. Nastavíme Grid i pro mobil - 3 sloupce stejně jako na PC */
+	header {
+		display: flex;
+		justify-content: space-between;
+		/* Roztáhne prvky do krajů */
+		align-items: center;
+		/* TOTO JE KLÍČOVÉ: Zarovná vše svisle na střed */
 
-    /* 3. Logo (UPROSTŘED) - Vynutíme 2. sloupec */
-    .logo {
-        grid-column: 2;       /* Musí být v druhém sloupci */
-        justify-self: center; /* Zarovnat na střed */
-        margin-right: 0;      /* Pro jistotu zrušíme odsazení z desktopu */
-    }
+		/* Pevná výška hlavičky (uprav dle potřeby, třeba 70px nebo 80px) */
+		height: 80px;
 
-    /* 4. Hamburger (VPRAVO) - Vynutíme 3. sloupec */
-    .hamburger {
-        grid-column: 3;      /* Musí být ve třetím sloupci */
-        justify-self: end;   /* Zarovnat doprava */
-        display: flex;       /* Zobrazit */
-    }
-	
+		/* Odsazení, aby ikony nebyly nalepené na kraji displeje */
+		padding: 0 20px;
+
+		/* Musí být relative, aby fungovalo absolutní centrování loga */
+		position: relative;
+		z-index: 100;
+	}
+
+	/* 2. Instagram (VLEVO) - Vynutíme 1. sloupec */
+	.social-icon {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 101;
+		/* Aby byly klikatelné nad logem */
+	}
+
+	/* 3. Logo (UPROSTŘED) - Vynutíme 2. sloupec */
+	.logo {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		/* Trik, který logo posune přesně na střed osy X i Y */
+		transform: translate(-50%, -50%);
+
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		text-decoration: none;
+		white-space: nowrap;
+		/* Aby se text nezalomil */
+	}
+
+	/* 4. Hamburger (VPRAVO) - Vynutíme 3. sloupec */
+	.hamburger {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 101;
+		/* Aby byly klikatelné nad logem */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 30px;
+		/* Výška klikací plochy */
+		gap: 5px;
+	}
+
 	header nav {
 		position: absolute;
 		top: 100%;
@@ -466,10 +499,14 @@ footer {
 	.hamburger.open span:nth-child(3) {
 		transform: rotate(-45deg) translate(5px, -6px);
 	}
+
+	.hero-col-img {
+		opacity: 0;
+ }
 }
 
 /* =========================================
-   STYLY PRO PŘESMĚROVACÍ WEB (ts-chytre-domy.cz)
+   STYLY PRO PŘESMĚROVACÍ WEB 
    ========================================= */
 
 /* Tuhle třídu musíme dát do <body> u druhého webu */

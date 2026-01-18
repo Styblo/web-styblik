@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Bc. Tomáš Styblík - Projekty a realizace chytrých domácností Loxone, Kladno a okolí, Praha.">
+  <title>Chytrá domácnost Loxone - Kladno a okolí | Loxone</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-loxone.css">
+  <script src="script.js" defer></script>
+
+<body class="dark-start">
+
+  <header>
+    <a href="https://www.instagram.com/ts.technik" target="_blank" class="social-icon" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    </a>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="nav-menu">
+      <a href="index.html">Úvodní stránka</a>
+      <a href="loxone.html" style="color: var(--primary);">Proč Loxone?</a>
+      <a href="reference.html">Reference</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+
+    <a href="index.html" class="logo">
+      <div class="logo-icon small">TS</div>
+      <span class="logo-text">Chytré domy</span>
+    </a>
+  </header>
+
+  <section class="interactive-hero">
+
+    <div id="intro-wrapper">
+      <div class="hero-text">
+        <h1>Objevte chytrou domácnost Loxone</h1>
+        <p>Stačí jeden dotyk</p>
+      </div>
+
+      <div class="switch-wrapper" onclick="switchScene()">
+        <img src="fig/(c)Loxone-Touch Pure-Anthracite.png" class="switch-img day" alt="Touch Day">
+        <img src="fig/(c)Loxone-Touch Pure-Anthracite-Light.png" class="switch-img night" alt="Touch Night">
+        <div class="glow-effect"></div>
+      </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
+
+      <div class="intro-block scroll-trigger">
+        <h2>Co je to Loxone?</h2>
+        <p>
+          Loxone je systém, který promění obyčejný dům v inteligentní domov.
+          Není to jen o ovládání světel přes mobil. Je to o <strong>automatizaci</strong>.
+          Váš dům o vás ví, přizpůsobuje se vašim zvykům a většinu technologií (topení, stínění, větrání)
+          řídí sám, aniž byste museli pohnout prstem.
+        </p>
+      </div>
+
+      <div class="intro-block scroll-trigger" style="transition-delay: 0.2s;">
+        <h2>Pro koho je řešení vhodné?</h2>
+        <p>
+          Pro každého, kdo staví nebo rekonstruuje a chce bydlet moderně.
+          Ať už jde o <strong>rodinný dům, byt nebo komerční prostory</strong>.
+          Loxone je ideální pro lidi, kteří chtějí ušetřit energie, zvýšit bezpečí
+          a především získat zpět čas, který by jinak trávili rutinním ovládáním domu.
+        </p>
+      </div>
+
+      <div class="spacer"></div>
+      <div class="feature-row scroll-trigger">
+        <div class="text-col">
+          <h2>Mozek vašeho domova</h2>
+          <p>
+            Miniserver funguje jako centrální jednotka, který propojuje všechny technologie - od žaluzií a topení po osvětlení a zabezpečení.
+          </p>
+          <p>
+            Miniserver zpracovává veškerou logiku lokálně. <strong>Váš dům bude fungovat spolehlivě i při výpadku internetu.</strong>
+            Žádné poplatky, žádná závislost na internetu*.
+          </p>
+          <p style="font-size: 8px;">
+            *bez použití služeb: Call Service a Weather Service
+          </p>
+        </div>
+        <div class="img-col">
+          <img src="fig/PH-Miniserver.png" alt="Loxone Miniserver">
+        </div>
+      </div>
+
+      <div class="feature-row scroll-trigger">
+        <div class="text-col">
+          <h2 style="color: #d63384;">Víc než jen hudba</h2>
+          <p>
+            Audioserver není jen přehrávač hudby. Plní také funkci domovního zvonku a v případě poplachu se mění v hlubokou sirénu, která vás v noci zaručeně probudí. 
+            Kromě Spotify a AirPlay umí i mluvit - upozorní vás třeba na otevřená vrata garáže.
+          </p>
+          <p>
+            <strong>Jaké reproduktory použít?</strong><br>
+            Ideální jsou reproduktory Loxone na sběrnici Tree Turbo.<br>
+            Lze však použít i jakékoliv pasivní reproduktory.
+          </p>
+        </div>
+        <div class="img-col">
+          <img src="fig/PH-Audioserver.png" alt="Loxone Audio">
+        </div>
+      </div>
+
+
+      <div class="feature-row scroll-trigger">
+        <div class="text-col">
+          <h2>Chytré Osvětlení</h2>
+          <p>
+            Zapomeňte na neustálé "cvakání" vypínači. Světla se automaticky přizpůsobí vaší přítomnosti.
+          </p>
+          <p>  
+            Systém kopíruje přirozený sluneční svit - ráno vás nabudí jasným bílým světlem, večer se automaticky ztlumí do hřejivých oranžových tónů pro lepší spánek. 
+          </p>
+          <p>
+            Jedním stiskem pak změníte celou místnost z režimu "Práce" na "Relax" nebo další nálady, které si můžete individuálně nastavit.
+          </p>
+        </div>
+        <div class="img-col">
+          <img src="fig/(c)Loxone-Touch Pure-Anthracite-Light.png" alt="Osvětlení">
+        </div>
+      </div>
+
+      <div class="feature-row scroll-trigger">
+        <div class="text-col">
+          <h2>Automatické Stínění</h2>
+          <p>
+            Žaluzie, které spolupracují s topením. V zimě pustí slunce dovnitř, aby dům vyhřálo,
+            v létě se zatáhnou, aby se nepřehříval. Vše zcela automaticky.
+          </p>
+        </div>
+        <div class="img-col">
+          <img src="fig/(c)Loxone-Touch Pure-Anthracite.png" alt="Stínění">
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena. Chytrý dům Loxone - Kladno</p>
+    <p style="font-size: 0.75rem; color: #666; margin-top: 5px;">
+      Použité fotografie a videa: Archiv společnosti Loxone Electronics GmbH.
+    </p>
+  </footer>
+
+</body>
+
+</html>

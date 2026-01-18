@@ -1,0 +1,471 @@
+/* === DARK START (ZAMČENÁ MÍSTNOST) === */
+body.dark-start header {
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: none;
+}
+
+/* Schování menu ve tmě */
+body.dark-start header nav,
+body.dark-start .social-icon,
+body.dark-start .hamburger {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.0s ease;
+}
+
+/* Bílé logo ve tmě */
+body.dark-start .logo,
+body.dark-start .logo-text {
+  color: #f4f4f4;
+  transition: color 1.5s ease;
+}
+
+/* Body nastavení pro tmu */
+body.dark-start {
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+  transition: background-color 1.5s ease, color 1.5s ease;
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.dark-start .footer {
+  opacity: 0;
+}
+
+/* Body nastavení pro světlo */
+body {
+  background-color: var(--white);
+  color: var(--dark);
+  transition: background-color 1.5s ease, color 1.5s ease;
+}
+
+@keyframes fadeInMove {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Přijede zespoda */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* Usadí se na své místo */
+  }
+}
+
+/* --- INTERAKTIVNÍ SEKCE (HERO) --- */
+.interactive-hero {
+  width: 100%;
+  /* Zajistí, že sekce zabere většinu obrazovky, aby byl vypínač uprostřed */
+  min-height: 85vh;
+
+  display: flex;
+  flex-direction: column;
+  /* Prvky se řadí pod sebe (Text -> Vypínač) */
+  justify-content: center;
+  /* Vertikální centrování */
+  align-items: center;
+  /* Horizontální centrování */
+
+  position: relative;
+  background-color: transparent;
+  padding: 20px;
+  /* Ochranný odstup od krajů na malých mobilech */
+  box-sizing: border-box;
+}
+
+/* Stínování přes fotku */
+.shadow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* --- NOVÝ TEXT NAD VYPÍNAČEM --- */
+.hero-text {
+  opacity: 0;
+  animation: fadeInMove 1.2s ease-out forwards;
+  animation-delay: 0.4s;
+
+  text-align: center;
+  margin-bottom: 50px;
+  /* Mezera mezi textem a vypínačem */
+  z-index: 10;
+  transition: color 1.5s ease;
+  max-width: 1000px;
+}
+
+.hero-text h1 {
+  /* Clamp funkce: min 2rem, max 3.5rem, mezitím se škáluje podle šířky (5vw) */
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 400;
+}
+
+/* Barva textu ve tmě */
+body.dark-start .hero-text {
+  color: #f4f4f4;
+}
+
+@keyframes fadeInMoveSwitch {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.switch-wrapper {
+  /* ZDE JE ZMĚNA: Už žádné absolute positioning */
+  opacity: 0;
+  animation: fadeInMoveSwitch 2s ease-out forwards;
+  position: relative;
+
+  width: 18%;
+  min-width: 200px;
+  /* Trochu větší minimum pro mobily */
+  max-width: 250px;
+  aspect-ratio: 1 / 1;
+
+  z-index: 20;
+  cursor: pointer;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+
+  /* Plynulá animace stisku */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover efekt - pouze zvětšení, bez posunu */
+.switch-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* Klik efekt */
+.switch-wrapper:active {
+  transform: scale(0.95);
+}
+
+.switch-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: opacity 1s ease;
+}
+
+.switch-img.night {
+  opacity: 0;
+}
+
+/* Přepínání viditelnosti obrázků */
+body.dark-start .switch-img.night {
+  opacity: 1;
+}
+
+body.dark-start .switch-img.day {
+  opacity: 0;
+}
+
+/* --- GLOW EFEKT (ZÁŘE) --- */
+body.dark-start .glow-effect {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+
+  /* Stále centrujeme absolutně VŮČI RODIČI (.switch-wrapper) */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(circle, rgba(255, 248, 106, 0.2) 0%, rgba(253, 255, 130, 0) 70%);
+  z-index: -1;
+  animation: pulseGlow 3s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+#intro-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 100%;
+}
+
+/* Třída pro zmizení úvodu (přidá JS) */
+/* Třída pro zmizení úvodu */
+.fade-out-up {
+  opacity: 0;
+  transform: translateY(-80px) scale(0.9); /* Trochu delší odjezd a zmenšení */
+  pointer-events: none;
+  
+  /* --- TOTO JE TA ZMĚNA --- */
+  /* Vytrhneme prvek z toku dokumentu, aby se text mohl hned nasunout */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Zajistíme, aby i jako absolutní prvek zůstal vycentrovaný */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styl pro nový obsah */
+#main-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  /* Výchozí stav pro animaci příjezdu */
+  opacity: 0;
+  transform: translateY(60px);
+  /* Je schovaný dole */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Třída pro zobrazení obsahu (přidá JS) */
+.content-visible {
+  opacity: 1;
+  transform: translateY(0);
+  /* Vyjede na své místo */
+}
+
+#main-content.content-visible {
+  opacity: 1;
+  transform: translateY(0);
+  /* Vyjede na své místo */
+}
+
+/* Styling textu v nové sekci */
+.content-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  /* Nebo jiná barva */
+}
+
+.content-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* === STŘÍDAVÝ LAYOUT A POKROČILÉ ANIMACE === */
+
+/* 1. NASTAVENÍ RODIČE (ŘÁDEK) */
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 100px;
+}
+
+/* Každý SUDÝ řádek otočíme (Obrázek bude vlevo, Text vpravo) */
+.feature-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Sloupce */
+.text-col, .img-col {
+  flex: 1;
+}
+
+.img-col {
+  display: flex;
+  justify-content: center;
+}
+
+/* === DEFINICE ANIMACÍ PRO DĚTI === */
+
+/* Společný základ pro Text i Obrázek - výchozí stav je neviditelný */
+.text-col, .img-col img {
+  opacity: 0;
+  /* Definujeme přechod: když se změní opacity nebo transform, trvá to 0.8s */
+  /* Používáme cubic-bezier pro "pružnější" dojezd */
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+/* --- A) ANIMACE TEXTU (Vždy přijede zespoda) --- */
+
+/* Výchozí stav textu: posunutý dolů */
+.text-col {
+  transform: translateY(60px);
+}
+/* Nadpisy v kartách */
+.text-col h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--primary); /* Tvá primární barva Loxone, uprav dle potřeby */
+}
+
+.text-col p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* AKTIVNÍ STAV TEXTU: Když má rodič třídu .is-visible */
+.feature-row.is-visible .text-col {
+  opacity: 1;
+  transform: translateY(0); /* Dojede na místo */
+}
+
+
+/* --- B) ANIMACE OBRÁZKŮ (Slide ze stran) --- */
+
+/* Základní styl obrázku */
+.img-col img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 1. LICHÉ řádky (1, 3...) -> Obrázek je vizuálně VPRAVO.
+   Výchozí stav: posunutý ještě více doprava (+80px) */
+.feature-row:nth-child(odd) .img-col img {
+   transform: translateX(80px);
+}
+
+/* 2. SUDÉ řádky (2, 4...) -> Obrázek je vizuálně VLEVO (díky row-reverse).
+   Výchozí stav: posunutý ještě více doleva (-80px) */
+.feature-row:nth-child(even) .img-col img {
+   transform: translateX(-80px);
+}
+
+/* AKTIVNÍ STAV OBRÁZKU (Společný pro obě strany) */
+/* Když má rodič .is-visible, obrázek dojede na střed (translateX 0) */
+.feature-row.is-visible .img-col img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* --- HOVER EFEKT NA OBRÁZKY --- */
+/* Musíme zajistit, aby hover fungoval až PŘI a PO zobrazení, 
+   a aby "nepřepsal" pozici translateX(0). */
+
+.feature-row.is-visible .img-col img:hover {
+  /* Zvětšíme, ale zároveň držíme X pozici na nule */
+  transform: translateX(0) scale(1.03);
+  /* Pro hover použijeme rychlejší transition */
+  transition: transform 0.3s ease-out; 
+}
+
+
+/* RESPONSIVITA (Mobil) */
+@media (max-width: 768px) {
+  .feature-row, .feature-row:nth-child(even) {
+    flex-direction: column; /* Na mobilu vždy pod sebe */
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  /* Na mobilu zrušíme boční příjezdy, vypadá to divně na úzkém displeji.
+     Všechno necháme přijet zespoda. */
+  .feature-row:nth-child(odd) .img-col img,
+  .feature-row:nth-child(even) .img-col img {
+      transform: translateY(60px); /* Místo translateX použijeme Y */
+  }
+
+  .feature-row.is-visible .img-col img {
+      transform: translateY(0);
+  }
+}
+
+/* === ÚVODNÍ TEXTOVÉ BLOKY === */
+
+.intro-block {
+  text-align: center;      /* Zarovnání na střed */
+  max-width: 800px;        /* Aby řádek nebyl moc dlouhý a dobře se četl */
+  margin: 0 auto 60px auto;/* Vycentrování bloku a mezera pod ním */
+  padding: 0 20px;         /* Odsazení na mobilech */
+  height: 50vh;
+  align-content: center;
+  /* Výchozí stav pro animaci (skryté) */
+  opacity: 0;
+  transform: translateY(40px); /* Přijede zespoda */
+  
+  /* Animace: stejně plynulá jako u karet */
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stav, kdy je blok vidět (přidá JS Observer) */
+.intro-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Styling nadpisů v úvodu */
+.intro-block h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary); /* Nebo #d63384, pokud nemáš proměnnou */
+}
+
+/* Styling odstavců */
+.intro-block p {
+  font-size: 1.25rem; /* O něco větší písmo pro úvod */
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Pomocný spacer pro oddělení úvodu od karet */
+.spacer {
+  height: 100px;
+}
+
+/* Mobilní úprava */
+@media (max-width: 768px) {
+  .intro-block h2 {
+    font-size: 2rem;
+  }
+  .intro-block p {
+    font-size: 1.1rem;
+  }
+}
+

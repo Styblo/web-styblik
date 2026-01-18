@@ -2,18 +2,19 @@
 <html lang="cs">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Chytrá domácnost Loxone - Kladno a okolí | Reference</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="icon" type="image/svg+xml" href="favicon.svg">
-	<script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chytrá domácnost Loxone - Kladno a okolí | Reference</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-loxone.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
- <header>
-    <a href="https://www.instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
+  <header>
+    <a href="https://www.instagram.com/ts.technik" target="_blank" class="social-icon" aria-label="Instagram">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -30,6 +31,7 @@
 
     <nav id="nav-menu">
       <a href="index.html">Úvodní stránka</a>
+      <a href="loxone.html">Proč Loxone?</a>
       <a href="reference.html" style="color: var(--primary);">Reference</a>
       <a href="index.html#kontakt">Kontakt</a>
     </nav>
@@ -44,12 +46,10 @@
 
     <div class="hero-slideshow">
 
-      <div class="slide"
-        style="background-image: url('fig/loxone1.jpg');">
+      <div class="slide" style="background-image: url('fig/loxone1.jpg');">
       </div>
 
-      <div class="slide"
-        style="background-image: url('fig/loxone2.jpg');">
+      <div class="slide" style="background-image: url('fig/loxone2.jpg');">
       </div>
 
     </div>
@@ -57,27 +57,31 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <h1>Moje realizace</h1>
-		  <p>Ukázky kompletních instalací Loxone, případně dalších projektů.</p>
+      <h1 class="animate-in delay-1">Moje realizace</h1>
+      <p class="animate-in delay-2">Ukázky kompletních instalací Loxone, případně dalších projektů.</p>
     </div>
 
   </section>
 
-	<section class="container">
+  <section class="container">
+    <div class="animate-in delay-3">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Rodinný dům - příklad</h3>
+          <p>Kompletní řízení novostavby systémem Loxone.</p>
+          <br>
+          <a href="reference.html" class="btn">Zobrazit fotky a detaily</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<div class="services-grid">
-			<div class="service-card">
-				<h3>Rodinný dům - příklad</h3>
-				<p>Kompletní řízení novostavby systémem Loxone.</p>
-				<br>
-				<a href="reference.html" class="btn">Zobrazit fotky a detaily</a>
-			</div>
-		</div>
-	</section>
-
-	<footer>
-		<p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena.</p>
-	</footer>
+  <footer>
+    <p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena.</p>
+    <p style="font-size: 0.75rem; color: #666; margin-top: 5px;">
+      Použité fotografie a videa: Archiv společnosti Loxone Electronics GmbH.
+    </p>
+  </footer>
 
 </body>
 

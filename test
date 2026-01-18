@@ -1,0 +1,77 @@
+    <div id="main-content" style="display: none;">
+
+      <div class="intro-block scroll-trigger">
+        <h2>Co je to Loxone?</h2>
+        <p>
+          Loxone je systém, který promění obyčejný dům v inteligentní domov.
+          Není to jen o ovládání světel přes mobil. Je to o <strong>automatizaci</strong>.
+          Váš dům o vás ví, přizpůsobuje se vašim zvykům a většinu technologií (topení, stínění, větrání)
+          řídí sám, aniž byste museli pohnout prstem.
+        </p>
+      </div>
+
+      <div class="intro-block scroll-trigger" style="transition-delay: 0.2s;">
+        <h2>Pro koho je řešení vhodné?</h2>
+        <p>
+          Pro každého, kdo staví nebo rekonstruuje a chce bydlet moderně.
+          Ať už jde o <strong>rodinný dům, byt nebo komerční prostory</strong>.
+          Loxone je ideální pro lidi, kteří chtějí ušetřit energie, zvýšit bezpečí
+          a především získat zpět čas, který by jinak trávili rutinním ovládáním domu.
+        </p>
+      </div>
+
+      <div class="spacer"></div>
+      <div class="feature-row scroll-trigger">
+        <div class="text-col">
+          <h2>Loxone Miniserver</h2>
+          <p>
+            Loxone není jen sada chytrých vypínačů. Je to kompletní systém, který promění váš dům v inteligentní
+            organismus.
+            Většinu úkonů řeší automaticky za vás.
+          </p>
+        </div>
+        <div class="img-col">
+          <img src="fig/PH-Miniserver.png" alt="Loxone Miniserver">
+        </div>
+      </div>
+
+      <div class="feature-row scroll-trigger">
+        <div class="text-col">
+          <h2 style="color: #d63384;">Hudba v každém pokoji</h2>
+          <p>
+            Probouzejte se s oblíbenou písní, poslouchejte podcast v koupelně a relaxační hudbu v sauně.
+            Multiroom audio systém se stane součástí vašeho života.
+          </p>
+        </div>
+        <div class="img-col">
+          <img src="fig/PH-Audioserver.png" alt="Loxone Audio">
+        </div>
+      </div>
+
+
+      <div class="feature-row scroll-trigger">
+        <div class="text-col">
+          <h2>Chytré Osvětlení</h2>
+          <p>
+            Zapomeňte na hledání vypínačů. Světla se přizpůsobí vaší přítomnosti i denní době.
+            V noci vás jemně navedou na toaletu, večer vytvoří atmosféru pro sledování filmu.
+          </p>
+        </div>
+        <div class="img-col">
+          <img src="fig/(c)Loxone-Touch Pure-Anthracite-Light.png" alt="Osvětlení">
+        </div>
+      </div>
+
+      <div class="feature-row scroll-trigger">
+        <div class="text-col">
+          <h2>Automatické Stínění</h2>
+          <p>
+            Žaluzie, které spolupracují s topením. V zimě pustí slunce dovnitř, aby dům vyhřálo,
+            v létě se zatáhnou, aby se nepřehříval. Vše zcela automaticky.
+          </p>
+        </div>
+        <div class="img-col">
+          <img src="fig/(c)Loxone-Touch Pure-Anthracite.png" alt="Stínění">
+        </div>
+      </div>
+    </div>

@@ -9,12 +9,13 @@
   <title>Chytrá domácnost Loxone - Kladno a okolí | Tomáš Styblík</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-loxone.css">
   <script src="script.js" defer></script>
 
 <body>
 
   <header>
-    <a href="https://www.instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
+    <a href="https://www.instagram.com/ts.technik" target="_blank" class="social-icon" aria-label="Instagram">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -31,6 +32,7 @@
 
     <nav id="nav-menu">
       <a href="index.html" style="color: var(--primary);">Úvodní stránka</a>
+      <a href="loxone.html">Proč Loxone?</a>
       <a href="reference.html">Reference</a>
       <a href="index.html#kontakt">Kontakt</a>
     </nav>
@@ -45,12 +47,10 @@
 
     <div class="hero-slideshow">
 
-      <div class="slide"
-        style="background-image: url('fig/loxone1.jpg');">
+      <div class="slide" style="background-image: url('fig/loxone1.jpg');">
       </div>
 
-      <div class="slide"
-        style="background-image: url('fig/loxone2.jpg');">
+      <div class="slide" style="background-image: url('fig/loxone2.jpg');">
       </div>
 
     </div>
@@ -58,36 +58,41 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <h1>Chytrá domácnost Kladno a okolí</h1>
-      <p>Návrhy a realizace inteligentních domů Loxone a kamerových systémů. Propojuji moderní technologie do jednoho
+      <h1 class="animate-in delay-1">Chytrá domácnost Kladno a celá ČR</h1>
+      <p class="animate-in delay-2">Návrhy a realizace inteligentních domů Loxone a kamerových systémů. Propojuji
+        moderní technologie do jednoho
         funkčního celku.</p>
-      <a href="loxone.html" class="btn">Chci vědět víc o Loxone</a>
+      <div class="animate-in delay-3">
+        <a href="loxone.html" class="btn">Chci vědět víc o Loxone</a>
+      </div>
     </div>
 
   </section>
 
   <section class="container">
     <div class="section-title">
-      <h2>Komplexní řešení od projektu po oživení</h2>
+      <h2 class="animate-in delay-4">Komplexní řešení od projektu po oživení</h2>
     </div>
+    <div class="animate-in delay-5">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Chytrý dům Loxone</h3>
+          <p>Kompletní instalace a programování systému Loxone. Ovládejte světla, žaluzie i hudbu z jedné aplikace nebo
+            pomocí klasických tlačítek. Systém se postará i o automatické zavlažování nebo spínání spotřebičů v době
+            levné
+            energie.</p>
+        </div>
 
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Chytrý dům Loxone</h3>
-        <p>Kompletní instalace a programování systému Loxone. Ovládejte světla, žaluzie i hudbu z jedné aplikace nebo
-          pomocí klasických tlačítek. Systém se postará i o automatické zavlažování nebo spínání spotřebičů v době levné
-          energie.</p>
-      </div>
+        <div class="service-card">
+          <h3>Zabezpečení & Kamery</h3>
+          <p>Mějte svůj dům pod dohledem.</p>
+        </div>
 
-      <div class="service-card">
-        <h3>Zabezpečení & Kamery</h3>
-        <p>Mějte svůj dům pod dohledem.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>3D tisk</h3>
-        <p>Zakázkový 3D tisk technických dílů. Výroba krabiček pro elektroniku, držáků senzorů a atypických prvků pro
-          instalace na míru.</p>
+        <div class="service-card">
+          <h3>3D tisk</h3>
+          <p>Zakázkový 3D tisk technických dílů. Výroba krabiček pro elektroniku, držáků senzorů a atypických prvků pro
+            instalace na míru.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -132,6 +137,9 @@
 
   <footer>
     <p>&copy; 2026 Bc. Tomáš Styblík. Všechna práva vyhrazena. Chytrý dům Loxone - Kladno</p>
+    <p style="font-size: 0.75rem; color: #666; margin-top: 5px;">
+      Použité fotografie a videa: Archiv společnosti Loxone Electronics GmbH.
+    </p>
   </footer>
 
 </body>
