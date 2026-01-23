@@ -364,8 +364,8 @@ body.dark-start .glow-effect {
 
 /* Základní styl obrázku */
 .img-col img {
-  max-width: 100%;
-  height: auto;
+  max-width: 600px;
+  max-height: 400px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -390,16 +390,6 @@ body.dark-start .glow-effect {
 }
 
 
-/* --- HOVER EFEKT NA OBRÁZKY --- */
-/* Musíme zajistit, aby hover fungoval až PŘI a PO zobrazení, 
-   a aby "nepřepsal" pozici translateX(0). */
-
-.feature-row.is-visible .img-col img:hover {
-  /* Zvětšíme, ale zároveň držíme X pozici na nule */
-  transform: translateX(0) scale(1.03);
-  /* Pro hover použijeme rychlejší transition */
-  transition: transform 0.3s ease-out;
-}
 
 
 /* RESPONSIVITA (Mobil) */
@@ -544,9 +534,4 @@ body.dark-start .glow-effect {
 
 #living-room-img {
   transition: opacity 0.3s ease-in-out;
-}
-
-/* Třída pro efekt stmívání při výměně (pokud bys chtěl pokročilejší animaci v JS) */
-.fade-out {
-  opacity: 0.5;
 }
